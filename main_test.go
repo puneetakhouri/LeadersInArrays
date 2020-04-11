@@ -7,12 +7,12 @@ func TestFindLeaders(t *testing.T) {
 		input    []int
 		expected []int
 	}{
-		{[]int{16, 17, 4, 3, 5, 2}, []int{2, 5, 17}},
-		{[]int{1, 2, 3, 4, 0}, []int{0, 4}},
-		{[]int{7, 4, 5, 7, 3}, []int{3, 7, 7}},
+		{[]int{16, 17, 4, 3, 5, 2}, []int{17, 5, 2}},
+		{[]int{1, 2, 3, 4, 0}, []int{4, 0}},
+		{[]int{7, 4, 5, 7, 3}, []int{7, 7, 3}},
 	}
 	for _, data := range testData {
-		actual := FindLeaders(data.input)
+		actual := Find(data.input)
 		if areSlicesEqual(actual, data.expected) {
 			t.Log("SUCCESS")
 		} else {
